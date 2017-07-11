@@ -1,0 +1,38 @@
+<main class="container">
+  <div class="row">
+  <div>
+    <h1>Edit Ya Post</h1>
+    <form novalidate name="$ctrl.newPostForm">
+      <div ng-class="{
+        'has-error' : $ctrl.newPostForm.title.$invalid
+        }">
+        <label for="title">Title</label>
+        <input ng-model="$ctrl.post.title" id="title" class="form-control" required name="title">
+      </div>
+      <div ng-class="{
+        'has-error' : $ctrl.newPostForm.body.$invalid
+          }">
+        <label for="body">Body</label>
+        <textarea ng-model="$ctrl.post.body" id="body" class="form-control" required name="body"></textarea>
+      </div>
+      <div ng-class="{
+        'has-error' : $ctrl.newPostForm.author.$invalid
+          }">
+        <label for="author">Author</label>
+        <input ng-model="$ctrl.post.author" id="author" class="form-control" required name="author">
+      </div>
+      <div ng-class="{
+        'has-error' : $ctrl.newPostForm.imageUrl.$invalid
+        }">
+        <label for="image-url">Image URL</label>
+        <input ng-model="$ctrl.post.image_url" id="image-url" class="form-control" required name="image_url">
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary" ng-disabled="$ctrl.newPostForm.$invalid" ng-click="$ctrl.editPost($ctrl.post)">
+          Update
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+</main>
